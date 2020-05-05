@@ -46,18 +46,19 @@ for(let item = 0; item < nav.length; item++) {
   nav[item].textContent = siteContent['nav']['nav-item-' + [item + 1]];
   nav[item].style.color = 'green';
 }
-console.log(nav);
+// console.log(nav);
 const parentNavbar = document.querySelector('.container header nav');
-console.log(parentNavbar);
+// console.log(parentNavbar);
+
 const childElPrepend = document.createElement('a');
 console.log(childElPrepend);
-childElPrepend.textContent = 'PreLink';
+childElPrepend.textContent = 'Before';
 childElPrepend.setAttribute('href', '#');
 childElPrepend.style.color = "green";
 parentNavbar.prepend(childElPrepend);
 
 const childElAppend = document.createElement('a');
-childElAppend.textContent = 'PostLink';
+childElAppend.textContent = 'After';
 childElAppend.setAttribute('href', '#');
 childElAppend.style.color = 'green';
 parentNavbar.appendChild(childElAppend);
