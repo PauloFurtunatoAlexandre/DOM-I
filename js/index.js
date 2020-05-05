@@ -42,16 +42,12 @@ let logo = document.getElementById("logo-img").setAttribute('src', siteContent["
 
 let nav = document.querySelectorAll('div.container header nav a');
 for(let item = 0; item < nav.length; item++) {
-  // nav[item].textContent = siteContent['nav']['nav-item-' + [item]];
   nav[item].textContent = siteContent['nav']['nav-item-' + [item + 1]];
   nav[item].style.color = 'green';
 }
-// console.log(nav);
 const parentNavbar = document.querySelector('.container header nav');
-// console.log(parentNavbar);
 
 const childElPrepend = document.createElement('a');
-console.log(childElPrepend);
 childElPrepend.textContent = 'Before';
 childElPrepend.setAttribute('href', '#');
 childElPrepend.style.color = "green";
