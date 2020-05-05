@@ -41,10 +41,26 @@ const siteContent = {
 let logo = document.getElementById("logo-img").setAttribute('src', siteContent["nav"]["img-src"]);
 
 let nav = document.querySelectorAll('div.container header nav a');
-console.log('this are the navbar items: ', nav);
 for(let item = 0; item < nav.length; item++) {
-  nav[item].textContent = siteContent['nav']['nav-item-' + [item]];
+  // nav[item].textContent = siteContent['nav']['nav-item-' + [item]];
+  nav[item].textContent = siteContent['nav']['nav-item-' + [item + 1]];
+  nav[item].style.color = 'green';
 }
+console.log(nav);
+const parentNavbar = document.querySelector('.container header nav');
+console.log(parentNavbar);
+const childElPrepend = document.createElement('a');
+console.log(childElPrepend);
+childElPrepend.textContent = 'PreLink';
+childElPrepend.setAttribute('href', '#');
+childElPrepend.style.color = "green";
+parentNavbar.prepend(childElPrepend);
+
+const childElAppend = document.createElement('a');
+childElAppend.textContent = 'PostLink';
+childElAppend.setAttribute('href', '#');
+childElAppend.style.color = 'green';
+parentNavbar.appendChild(childElAppend);
 
 let cta = document.getElementById("cta-img").setAttribute('src', siteContent['cta']['img-src']);
 
@@ -80,6 +96,5 @@ contactP[1].textContent = siteContent['contact']['phone'];
 contactP[2].textContent = siteContent['contact']['email'];
 
 let contactPOne = document.querySelector('section.contact p');
-console.log(contactPOne);
 
 let footer = document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
