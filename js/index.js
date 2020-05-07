@@ -65,7 +65,14 @@ let cta = document.getElementById("cta-img").setAttribute('src', siteContent['ct
 
 let ctaH1 = document.querySelector('.cta .cta-text h1').textContent = siteContent['cta']['h1'];
 
-let ctaButton = document.querySelector('.cta button').textContent = siteContent['cta']['button'];
+let ctaButton = document.querySelector('.cta button');
+ctaButton.textContent = siteContent['cta']['button'];
+ctaButton.textContent = 'Click Me!';
+ctaButton.addEventListener('click', (event) => {
+  // alert(event.target.textContent = "Don't you think?");
+  event.target.textContent = "Don't you think?";
+  event.stopPropagation();
+});
 
 let middleImage = document.getElementById('middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
 
@@ -105,3 +112,4 @@ containerStyle.style.padding = '0 40px 20px';
 
 let imgStyle = document.querySelector('.main-content .middle-img');
 imgStyle.style.width = '100%';
+
