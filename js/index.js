@@ -69,7 +69,6 @@ let ctaButton = document.querySelector('.cta button');
 ctaButton.textContent = siteContent['cta']['button'];
 ctaButton.textContent = 'Click Me!';
 ctaButton.addEventListener('click', (event) => {
-  // alert(event.target.textContent = "Don't you think?");
   event.target.textContent = "Don't you think?";
   event.stopPropagation();
 });
