@@ -41,10 +41,12 @@ const siteContent = {
 let logo = document.getElementById("logo-img").setAttribute('src', siteContent["nav"]["img-src"]);
 
 let nav = document.querySelectorAll('div.container header nav a');
+
 for(let item = 0; item < nav.length; item++) {
   nav[item].textContent = siteContent['nav']['nav-item-' + [item + 1]];
   nav[item].style.color = 'green';
 }
+
 const parentNavbar = document.querySelector('.container header nav');
 
 const childElPrepend = document.createElement('a');
@@ -62,6 +64,7 @@ parentNavbar.appendChild(childElAppend);
 let cta = document.getElementById("cta-img").setAttribute('src', siteContent['cta']['img-src']);
 
 let ctaH1 = document.querySelector('.cta .cta-text h1').textContent = siteContent['cta']['h1'];
+
 let ctaButton = document.querySelector('.cta button').textContent = siteContent['cta']['button'];
 
 let middleImage = document.getElementById('middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
@@ -95,3 +98,10 @@ contactP[2].textContent = siteContent['contact']['email'];
 let contactPOne = document.querySelector('section.contact p');
 
 let footer = document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
+let containerStyle = document.querySelector('.container');
+containerStyle.style.backgroundColor = '#eee';
+containerStyle.style.padding = '0 40px 20px';
+
+let imgStyle = document.querySelector('.main-content .middle-img');
+imgStyle.style.width = '100%';
